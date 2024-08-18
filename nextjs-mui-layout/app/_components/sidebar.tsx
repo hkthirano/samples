@@ -8,8 +8,19 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import Link from 'next/link';
 
 const drawerWidth = 240;
+
+type MenuItem = {
+    name: string;
+    url: string;
+    icon: React.ReactNode;
+};
+const menuList: MenuItem[] = [
+    { name: "Inbox", url: "/", icon: <InboxIcon /> },
+    { name: "Starred", url: "/starred", icon: <MailIcon /> },
+];
 
 const SideBar = () => {
     return (
@@ -24,13 +35,15 @@ const SideBar = () => {
             <Toolbar />
             <Box sx={{ overflow: 'auto' }}>
                 <List>
-                    {['Inbox', 'Starred'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
+                    {menuList.map(({ name, url, icon }: MenuItem) => (
+                        <ListItem key={name} disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    {icon}
                                 </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <Link href={url}>
+                                    {name}
+                                </Link>
                             </ListItemButton>
                         </ListItem>
                     ))}
