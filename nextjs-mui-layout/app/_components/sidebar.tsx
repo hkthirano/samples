@@ -1,3 +1,5 @@
+"use client";
+
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,6 +11,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const drawerWidth = 240;
 
@@ -23,6 +26,8 @@ const menuList: MenuItem[] = [
 ];
 
 const SideBar = () => {
+    const pathname = usePathname();
+
     return (
         <Drawer
             variant="permanent"
@@ -37,7 +42,7 @@ const SideBar = () => {
                 <List>
                     {menuList.map(({ name, url, icon }: MenuItem) => (
                         <ListItem key={name} disablePadding>
-                            <ListItemButton>
+                            <ListItemButton selected={pathname === url}>
                                 <ListItemIcon>
                                     {icon}
                                 </ListItemIcon>
