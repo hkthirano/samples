@@ -1,0 +1,19 @@
+.header {
+    padding: 8px;
+    background: navy;
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 24px;
+    color: yellow;
+}
+
+.mobile-nav {
+    display: flex;
+}
+
+.mobile-nav > * {
+    margin-left: auto;
+    color: yellow;
+}
