@@ -1,5 +1,6 @@
 "use client";
 import { AppBar, Toolbar, Typography } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 
 const NavigationBar = () => {
@@ -10,7 +11,9 @@ const NavigationBar = () => {
         >
             <Toolbar>
                 <Typography variant="h6" noWrap component="div">
-                    Clipped drawer
+                    <Link href="/" >
+                        Clipped drawer
+                    </Link>
                 </Typography>
             </Toolbar>
         </AppBar>
