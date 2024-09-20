@@ -28,18 +28,18 @@ function App() {
 
       {/* componentでDOMの種類を指定 */}
       <Box sx={{ margin: 1, padding: 1, border: 'solid 1px #000000' }}>
-        {/* デフォルトはdivなのでblock要素で改行されて表示される */}
-        <Typography variant='body1'>div body</Typography>
-        <Typography variant='body1'>div body</Typography>
+        {/* body1のデフォルトはdivなのでblock要素で改行されて表示される */}
+        <Typography variant='body1'>div text</Typography>
+        <Typography variant='body1'>div text</Typography>
 
         {/* spanはinline要素なので横並びで表示される */}
-        <Typography variant='body1' component='span'>default body</Typography>
-        <Typography variant='body1' component='span'>default body</Typography>
+        <Typography variant='body1' component='span'>span text</Typography>
+        <Typography variant='body1' component='span'>span text</Typography>
 
         <br />
 
         {/* <a>タグの場合 */}
-        <Typography variant='body1' component='a' href='/'>default body</Typography>
+        <Typography variant='body1' component='a' href='/'>a text</Typography>
       </Box>
 
       {/* themeでカスタムテーマを指定 */}
